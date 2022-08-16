@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمدحسین محمودیان | وبسایت شخصی</title>
+    <link rel="icon" type="image/png" href="{% static 'images/face.png' %}" sizes="16x16">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.green.css' %}">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="nav d-flex" id="home">
+                <div class="logo">
+                    <a href="#">
+{#                        <img src="{% static 'images/name-black.png' %}" alt="logo" class="logo-main">#}
+{#                        <img src="{% static 'images/name-white.png' %}" alt="logo" class="logo-dark">#}
+
+                    </a>
+                </div>
+                <!-- toggle icon -->
+                <a href="javascript:void(0)" class="burger">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                    <span class="four"></span>
+
+                    <div class="close-icon">
+                        <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.4492 14.4202L29.5992 2.67518C29.8723 2.36697 30.015 1.97052 29.9988 1.56504C29.9826 1.15956 29.8087 0.774925 29.5118 0.487995C29.215 0.201065 28.8171 0.0329733 28.3977 0.0173115C27.9782 0.00164963 27.5681 0.139571 27.2492 0.403514L15.0992 12.1485L2.94924 0.387402C2.6304 0.12346 2.22028 -0.0144603 1.80082 0.00120154C1.38136 0.0168634 0.983459 0.184954 0.686635 0.471884C0.389811 0.758814 0.215923 1.14345 0.199721 1.54893C0.183519 1.95441 0.326196 2.35086 0.59924 2.65907L12.7492 14.4202L0.582573 26.1652C0.408104 26.3096 0.266403 26.4873 0.166364 26.6872C0.0663255 26.8871 0.0101078 27.1048 0.00124197 27.3267C-0.00762386 27.5486 0.0310527 27.7698 0.114844 27.9766C0.198635 28.1833 0.325732 28.3711 0.488156 28.5281C0.650581 28.6851 0.844826 28.808 1.0587 28.889C1.27258 28.97 1.50146 29.0074 1.731 28.9988C1.96053 28.9902 2.18575 28.9359 2.39252 28.8392C2.5993 28.7425 2.78316 28.6055 2.93257 28.4368L15.0992 16.6918L27.2492 28.4368C27.5681 28.7008 27.9782 28.8387 28.3977 28.823C28.8171 28.8074 29.215 28.6393 29.5118 28.3524C29.8087 28.0654 29.9826 27.6808 29.9988 27.2753C30.015 26.8698 29.8723 26.4734 29.5992 26.1652L17.4492 14.4202Z" />
+                        </svg>
+
+                    </div>
+                </a>
+                <div class="navigation-bar">
+                    <ul id="nav">
+                        <li class="active"><a href="#home">خانه</a></li>
+                        <li><a href="#about">درباره من</a></li>
+                        <li><a href="#services">سرویس ها</a></li>
+                        <li><a href="#portfolio">نمونه کار ها</a></li>
+                        <li><a href="#contact">تماس با من</a></li>
+                        <li class="darkmode-btn d-desktop">
+                            <a href="javascript:void(0)">
+                                <img src="{% static 'images/brightness.svg' %}" alt="brightness" class="bright">
+                                <img src="{% static 'images/moon.svg' %}" alt="moon" class="dark"> </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="darkmode-btn d-mobile"><a href="javascript:void(0)">
+                        <img src="{% static 'images/brightness.svg' %}" alt="brightness" class="bright">
+                        <img src="{% static 'images/moon.svg' %}" alt="moon" class="dark"> </a></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Hero section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-inner d-flex">
+                    <div class="col-left">
+                        <span class="sub-heading">سلام
+                        </span>
+                        <h1 class="heading">{{ home.fname }}
+                            <span>{{ home.lname }}</span>
+                        </h1>
+                        <h4 class="heading2">{{ home.role }}
+                        </h4>
+                        <div class="btn-blk">
+                            <a href="#contact" class="btn btn-blue">بیایید صحبت کنیم</a>
+                        </div>
+                        <div class="social">
+                            <ul>
+                                <li class="social-icon"><a href="{{ home.instagram }}"><img
+                                            src="{% static 'images/social-icons/feather_instagram.svg' %}" alt="instagram"></a>
+                                </li>
+                                <li class="social-icon"><a href="{{ home.linkedin }}"><img
+                                            src="{% static 'images/social-icons/feather_linkedin.svg' %}" alt="linkedin"></a>
+                                </li>
+                                <li class="social-icon"><a href="{{ home.github }}"><img
+                                            src="{% static 'images/social-icons/feather_github.svg' %}" alt="github"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <img class="image-main" src="{{ home.image.url }}" alt="user image">
+                        <img class="image-darkmode" src="{{ home.image.url }}" alt="user image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- features -->
+        <section class="features">
+            <div class="container">
+                <div class="features-inner d-grid">
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color1">
+                            <img src="{% static 'images/experience.svg' %}" alt="experience">
+                        </div>
+                        <div>
+                            <h3>{{ statis.experience }}</h3>
+                            <p>تجربه</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color2">
+                            <img src="{% static 'images/happy-clients.svg' %}" alt="happy clients ">
+                        </div>
+                        <div>
+                            <h3>{{ statis.customers }}</h3>
+                            <p>مشتریان راضی</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex color3">
+                            <img src="{% static 'images/projects-completed.svg' %}" alt="happy clients ">
+                        </div>
+                        <div>
+                            <h3>{{ statis.projects }}</h3>
+                            <p>پروژه های موفق</p>
+                        </div>
+                    </div>
+                    <div class="feature-item d-flex">
+                        <div class="icon d-flex  color4">
+                            <img src="{% static 'images/awards-won.svg' %}" alt="awards ">
+                        </div>
+                        <div>
+                            <h3>{{ statis.awards }}</h3>
+                            <p>جایزه ها</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section class="about ptb-100" id="about">
+            <div class="container">
+                <div class="about-inner d-flex">
+                    <div class="about-col-left">
+                        <img src="{{ about.image.url }}" alt="about">
+                    </div>
+                    <div class="about-col-right">
+                        <h2 class="about-heading">درباره من</h2>
+                        <h3 class="about2">{{ about.title }}</h3>
+                        <p class="about3">{{ about.body }}</p><br>
+                        <h4 class="about3" style="opacity: 0.7;">شهر: <br>{{ about.city }}</h4><br>
+                        <h4 class="about3" style="opacity: 0.7;">ایمیل: <br>{{ about.email }}</h4>
+                        <div class="about-btn-blk">
+                            <a href="{{ about.address }}" class="btn btn-blue about-btn">دانلود رزومه</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="experience ptb-100">
+            <div class="container">
+                <h2>مهارت های من </h2>
+                <div class="experience-inner d-grid">
+                    <!-- item -->
+                    {% for tool in skills %}
+                    <div class="progressbar-item">
+                        <div class="progressbar-content d-flex">
+                            <h3>{{ tool.tool_name }}</h3>
+                            <h4>{{ tool.progress }}</h4>
+                        </div>
+                        <div class="progessbar-bg">
+                            <div class="progressbar-size" style="width:{{ tool.progress }}">
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services ptb-100" id="services">
+            <div class="container">
+                <h2>آنچه ارائه می دهم</h2>
+                <div class="services-inner d-grid">
+                    <!-- item -->
+                    {% for service in services %}
+                    <div class="services-block">
+                        {% if service.title == 'توسعه وب' %}
+                        <div class="service-icon color1 d-flex">
+                            <img src="{% static 'images/services/web-dev.svg' %}" alt="ui design">
+                        </div>
+                         {% elif service.title == 'کدنویسی' %}
+                         <div class="service-icon color1 d-flex">
+                            <img src="{% static 'images/services/content-writing.svg' %}" alt="ui design">
+                        </div>
+                        {% else %}
+                        <div class="service-icon color1 d-flex">
+                            <img src="{% static 'images/services/web-dev.svg' %}" alt="ui design">
+                        </div>
+                        {% endif %}
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                    </div>
+                    {% endfor %}
+                    <!-- item -->
+                </div>
+            </div>
+        </section>
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-inner d-flex">
+                    <div class="cta-content">
+                        <h3>آیا پروژه ای در ذهن دارید؟</h3>
+                    </div>
+                    <a href="#contact" class="btn btn-default ">تماس با من</a>
+                </div>
+            </div>
+        </section>
+        <!-- projects -->
+        <section class="projects ptb-100" id="portfolio">
+            <div class="container">
+                <h2>پروژه های اخیر</h2>
+                <div class="projects-inner d-grid">
+                    <!-- item -->
+                    {% for project in projects %}
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="{{ project.image.url }}" alt="project image">
+                        </div>
+                        <div class="project-content">
+                            <h3>{{ project.project_name }}</h3>
+                            <div class="project-view d-flex">
+                                <span>{{ project.tools }}</span>
+                                <a href="{{ project.github_address }}" class="btn-view">مشاهده</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- item -->
+            </div>
+        </section>
+        <!-- Testmonial -->
+        <section class="testmonial">
+            <div class="container">
+                <div class="testmonial-inner">
+                    <h2>مشتریان راضی </h2>
+                    <div class="testmonial-slider owl-carousel owl-theme">
+                        <!-- item -->
+                        {% for comment in comments %}
+                        <div class="testmonial-item">
+                            <h3>{{ comment.project_name }}</h3>
+                            <p>{{ comment.description }}</p>
+                            <div class="client-data d-flex">
+                                <img src="{{ comment.profile_photo.url }}" alt="client thumb">
+                                <h4>{{ comment.name }}</h4>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- item -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Me -->
+        <section class="contact ptb-100" id="contact">
+            <div class="container">
+                <h2>تماس با من</h2>
+                <form id="basic-form" action="" method="post">
+                    {% csrf_token %}
+                    <div class="contact-inner d-flex">
+                        <div class="input-block form-item">
+                            <label for="">نام</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="input-block form-item">
+                            <label for="">فامیل</label>
+                            <input type="text" name="family" required>
+                        </div>
+                        <div class="input-block form-item">
+                            <label for="">ایمیل</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="input-block form-item">
+                            <label for="">تلفن</label>
+                            <input type="text" name="phone" required>
+                        </div>
+
+                        <div class="textarea form-item">
+                            <label for="">پیام شما</label>
+                            <textarea name="body" id="" required></textarea>
+                        </div>
+                        <div class="submit-btn form-item">
+                            <button type="submit" value="submit" class="btn btn-blue"> ارسال پیام</button>
+
+                        </div>
+                </form>
+            </div>
+        </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="footer-logo"><img src="{% static 'images/name-white.png' %}" alt="Footer logo"></a>
+                <div class="footer-nav">
+                    <ul>
+                        <li class="f-navlinks"><a href="#home">خانه</a></li>
+                        <li class="f-navlinks"><a href="#about">درباره من</a></li>
+                        <li class="f-navlinks"><a href="#services">سرویس ها</a></li>
+                        <li class="f-navlinks"><a href="#portfolio">نمونه کار ها</a></li>
+                        <li class="f-navlinks"><a href="#contact">تماس با من</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom d-flex">
+                    <p class="copyright">کلیه حقوق این سایت متعلق به محمدحسین محمودیان می باشد. Copyright © 2022- 2022</p>
+                    <div class="footer-social">
+                        <a href="{{ home.instagram }}" class="footer-social"><img src="{% static 'images/social-icons/feather_instagram.svg' %}"
+                                alt="instagram"></a>
+                        <a href="{{ home.linkedin }}" class="footer-social"><img src="{% static 'images/social-icons/feather_linkedin.svg' %}"
+                                alt="linkedin"></a>
+                        <a href="{{ home.github }}" class="footer-social"><img src="{% static 'images/social-icons/feather_github.svg' %}"
+                                alt="github"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll up -->
+    <a href="javascript:void(0)" class="scrollup">
+        <img src="{% static 'images/uparrow.svg' %}" alt="arrow up">
+    </a>
+</body>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/validate.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#basic-form").validate();
+    });
+</script>
+
+</html>
